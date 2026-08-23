@@ -208,13 +208,20 @@
     border-left: 3px solid var(--gold);
     border-radius: 4px;
   }
+  .next-top-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 14px;
+  }
   .next-label {
     font-family: 'Courier New', ui-monospace, monospace;
     font-size: 11px;
     letter-spacing: 0.14em;
     text-transform: uppercase;
     color: var(--gold);
-    margin-bottom: 8px;
   }
   .next-title {
     font-family: 'Iowan Old Style', Georgia, serif;
@@ -275,7 +282,7 @@
   <div class="about">
     <strong>What this is.</strong> The record of two minds chasing a pattern, told in order, including the parts that were wrong. Amateur research, done for the love of numbers. No formal training in mathematics here, just a thinking partner in AI and some ideas that go well outside the norm. Nothing is claimed as proven. A human and a machine, working out loud, through one of the most notorious open problems in mathematics.
     <br><br>
-    <a href="notation.html">Read the notation page &rarr;</a> &nbsp;&middot;&nbsp; <a href="#">A note on the other AI &rarr;</a>
+    <a href="notation.html">Read the notation page &rarr;</a>
   </div>
 
   <article>
@@ -415,10 +422,12 @@
     <p class="beat">Nobody had pressed go yet.</p>
 
     <div class="next-episode">
-      <div class="next-label">Next &middot; Episode Two</div>
+      <div class="next-top-row">
+        <span class="next-label">Next &middot; Episode Two</span>
+        <a href="episode-two.html" class="next-link">Read it &rarr;</a>
+      </div>
       <div class="next-title">Running the Numbers</div>
       <p class="next-teaser">The code finally runs on 7n+1. The heuristic said growth. The question is whether growth means it climbs forever, or just climbs longer than anyone expected to check by hand.</p>
-      <a href="episode-two.html" class="next-link">Read it &rarr;</a>
     </div>
   </article>
 
