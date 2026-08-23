@@ -13,6 +13,7 @@
     --bone: #F2ECDE;
     --bone-dim: #8C8579;
     --slate: #5C6B76;
+    --slate-text: #8A99A3;
     --slate-dim: #3E4A53;
     --rule: #3A362E;
   }
@@ -64,7 +65,7 @@
     margin-top: 18px;
     font-family: 'Courier New', ui-monospace, monospace;
     font-size: 13px;
-    color: var(--slate);
+    color: var(--slate-text);
     text-decoration: none;
     border-bottom: 1px solid var(--slate-dim);
   }
@@ -117,7 +118,7 @@
     font-family: 'Courier New', ui-monospace, monospace;
     font-size: 12px;
     letter-spacing: 0.06em;
-    color: var(--slate);
+    color: var(--slate-text);
     text-transform: uppercase;
     margin-bottom: 12px;
   }
@@ -150,7 +151,7 @@
   }
   .footer-row { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
   .footer-row .comma { color: var(--gold); }
-  footer a { color: var(--slate); text-decoration: none; margin-right: 16px; }
+  footer a { color: var(--slate-text); text-decoration: none; margin-right: 16px; }
   footer a:hover { text-decoration: underline; }
 
   @media (max-width: 480px) {
@@ -172,7 +173,7 @@
   <h1 class="page-title">Notation &amp; Terms</h1>
 
   <div class="intro">
-    <strong>This page grows with the archive.</strong> A term only appears here once it has actually shown up in an episode. Reading in order and reading this page at the same time should feel like the same pace, nothing here gets ahead of the story. Currently current through <a href="index.html">Episode One</a>.
+    <strong>This page grows with the archive.</strong> A term only appears here once it has actually shown up in an episode. Reading in order and reading this page at the same time should feel like the same pace, nothing here gets ahead of the story. Currently current through <a href="episode-two.html">Episode Two</a>.
   </div>
 
   <div class="term">
@@ -212,6 +213,13 @@
   </div>
 
   <div class="term">
+    <div class="term-name">Divergence</div>
+    <div class="term-source">first appears: episode one</div>
+    <p>What happens when a sequence keeps climbing forever instead of settling down. The opposite of convergence. For a Collatz-style rule, divergence would mean a starting number whose sequence never reaches 1, no matter how far it runs.</p>
+    <p><a href="https://en.wikipedia.org/wiki/Divergent_series" target="_blank" rel="noopener">Read more on Wikipedia &rarr;</a></p>
+  </div>
+
+  <div class="term">
     <div class="term-name">Expected multiplier (the heuristic argument)</div>
     <div class="term-source">first appears: episode one</div>
     <p>A way of estimating whether a variant of the Collatz rule tends to grow or shrink, on average, without tracing any specific number by hand. On average, an odd step gets halved twice before landing on the next odd number, so the expected multiplier is the rule's leading number divided by four. Below one means shrinkage is expected. Above one means growth is expected.</p>
@@ -222,7 +230,7 @@
   <footer>
     <div class="footer-row">
       <span>ENS<span class="comma">,</span>math</span>
-      <span>notation, current through episode 001</span>
+      <span>notation, current through episode 002</span>
     </div>
     <div class="footer-row">
       <a href="index.html">the archive</a>
