@@ -14,6 +14,7 @@
     --bone: #F2ECDE;
     --bone-dim: #8C8579;
     --slate: #5C6B76;
+    --slate-text: #8A99A3;
     --slate-dim: #3E4A53;
     --rule: #3A362E;
   }
@@ -36,6 +37,8 @@
     margin: 0 auto;
     padding: 0 24px 120px;
   }
+
+  /* ===== MARK / HEADER ===== */
 
   header {
     padding: 64px 0 40px;
@@ -61,6 +64,8 @@
     font-family: 'Courier New', ui-monospace, monospace;
   }
 
+  /* ===== DISCLAIMER BLOCK ===== */
+
   .about {
     background: var(--charcoal-raised);
     border-left: 3px solid var(--slate);
@@ -70,8 +75,10 @@
     color: var(--bone-dim);
   }
   .about strong { color: var(--bone); font-weight: 600; }
-  .about a { color: var(--slate); text-decoration: underline; text-underline-offset: 3px; }
-  .about a:visited { color: var(--slate); }
+  .about a { color: var(--slate-text); text-decoration: underline; text-underline-offset: 3px; }
+  .about a:visited { color: var(--slate-text); }
+
+  /* ===== POST ===== */
 
   .post-eyebrow {
     font-family: 'Courier New', ui-monospace, monospace;
@@ -100,7 +107,7 @@
   }
 
   .post-meta .status {
-    color: var(--slate);
+    color: var(--slate-text);
   }
 
   article a { color: var(--gold); text-decoration: underline; text-underline-offset: 3px; text-decoration-color: var(--gold-dim); }
@@ -159,7 +166,7 @@
   blockquote .who {
     display: block;
     margin-top: 6px;
-    color: var(--slate);
+    color: var(--slate-text);
     font-size: 12px;
     letter-spacing: 0.06em;
   }
@@ -188,7 +195,7 @@
     font-size: 12px;
     letter-spacing: 0.12em;
     text-transform: uppercase;
-    color: var(--slate);
+    color: var(--slate-text);
     margin-bottom: 10px;
   }
   .open-q p { color: var(--bone-dim); font-size: 15px; margin-bottom: 0; }
@@ -247,7 +254,7 @@
     margin-bottom: 10px;
   }
   .footer-row .comma { color: var(--gold); }
-  footer a { color: var(--slate); text-decoration: none; margin-right: 16px; }
+  footer a { color: var(--slate-text); text-decoration: none; margin-right: 16px; }
   footer a:hover { text-decoration: underline; }
 
   @media (max-width: 480px) {
@@ -282,7 +289,19 @@
 
     <p class="lede-sub">It got asked anyway. Out loud. On an ordinary night. With no expectation of an answer.</p>
 
-    <p>The <a href="https://en.wikipedia.org/wiki/Collatz_conjecture" target="_blank" rel="noopener">Collatz conjecture</a> has run on the same two rules since 1937. Even number: cut it in half. Odd number: multiply by three, add one. Do that forever, the conjecture says, and every number ends up at one. Nobody has proven it. Nobody has broken it either. Two sextillion numbers checked by machine, a two followed by twenty-one zeros, <a href="https://link.springer.com/article/10.1007/s11227-025-07337-0" target="_blank" rel="noopener">up to 2 to the power of 71</a>, without one exception.</p>
+    <p>The <a href="https://en.wikipedia.org/wiki/Collatz_conjecture" target="_blank" rel="noopener">Collatz conjecture</a> has run on the same two rules since 1937.</p>
+
+    <p>Even number: cut it in half.</p>
+
+    <p>Odd number: multiply by three, add one.</p>
+
+    <p>Do that forever, the conjecture says, and every number ends up at one.</p>
+
+    <p>Nobody has proven it.</p>
+
+    <p>Nobody has broken it either.</p>
+
+    <p>Two sextillion numbers checked by machine, a two followed by twenty-one zeros, <a href="https://link.springer.com/article/10.1007/s11227-025-07337-0" target="_blank" rel="noopener">up to 2 to the power of 71</a>, without one exception.</p>
 
     <div class="math-block">
       n is whatever number you start with.<br><br>
@@ -296,7 +315,7 @@
       6 &nbsp;&rarr;&nbsp; 3 &nbsp;&rarr;&nbsp; 10 &nbsp;&rarr;&nbsp; 5 &nbsp;&rarr;&nbsp; 16 &nbsp;&rarr;&nbsp; 8 &nbsp;&rarr;&nbsp; 4 &nbsp;&rarr;&nbsp; 2 &nbsp;&rarr;&nbsp; <span class="k">1</span>
     </div>
 
-    <p>Six is even. It halves to three. Three is odd. It triples, adds one, lands on ten. Back and forth, halving and multiplying, until it lands on one and stops. Every positive number ever tested does this. Eventually. No matter how long it takes to get there.</p>
+    <p>Six is even. It halves to three. Three is odd. It triples, adds one, lands on ten. Back and forth, halving and multiplying, until it reaches one. Every positive number ever tested reaches one eventually, no matter how many steps it takes.</p>
 
     <p>The 3 is doing quiet, specific work in that rule. Multiply an odd number by three, it stays odd. Add one, and it's forced even. Guaranteed, every time, an immediate halving. Growth from the multiplication. A built-in brake from the plus one.</p>
 
@@ -312,7 +331,19 @@
 
     <p class="beat">A <a href="https://en.wikipedia.org/wiki/Mersenne_prime" target="_blank" rel="noopener">Mersenne prime</a>.</p>
 
-    <p>Three is one: 2 times 2, minus 1, is 3. Then the bet, stated as a question: swap the 3 for any other Mersenne prime, 7, 31, 127, and you get a new trivial loop. The sequence still settles instead of running off forever. Same shape. Different number.</p>
+    <p>Three is one:</p>
+
+    <p>2 times 2, minus 1, is 3.</p>
+
+    <p>Then the bet, stated as a question:</p>
+
+    <p>swap the 3 for any other Mersenne prime, 7, 31, 127, and you get a new trivial loop.</p>
+
+    <p>The sequence still settles instead of running off forever.</p>
+
+    <p>Same shape.</p>
+
+    <p>Different number.</p>
 
     <p>The clean case is starting from 1, with 7 in place of 3:</p>
 
@@ -329,16 +360,22 @@
 
     <p class="beat">But.</p>
 
-    <p>The honest answer runs the other way from how it was first framed. The standard reason Collatz is expected to shrink comes from a <a href="https://terrytao.wordpress.com/2011/08/25/the-collatz-conjecture-littlewood-offord-theory-and-powers-of-2-and-3/" target="_blank" rel="noopener">heuristic argument</a> mathematicians actually rely on: on average, an odd step gets halved twice before landing on the next odd number, so the expected multiplier per step is that leading number (the 3, or whatever it's swapped for) divided by four. For 3, that's 3 divided by 4. Net contraction. The real basis for expecting convergence. Run the same arithmetic on 7, and the expected multiplier is 7 divided by 4. Growth, not shrinkage. By this measure, swapping in 7 should make sequences <em>less</em> likely to settle. Not more.</p>
+    <p>The answer runs the other way from how it was first framed. The standard reason Collatz is expected to shrink comes from a <a href="https://terrytao.wordpress.com/2011/08/25/the-collatz-conjecture-littlewood-offord-theory-and-powers-of-2-and-3/" target="_blank" rel="noopener">heuristic argument</a> mathematicians actually rely on: on average, an odd step gets halved twice before landing on the next odd number, so the expected multiplier per step is that leading number (the 3, or whatever it's swapped for) divided by four. For 3, that's 3 divided by 4. Net contraction. This is what actually predicts convergence. Run the same arithmetic on 7, and the expected multiplier is 7 divided by 4. Growth, not shrinkage. By this measure, swapping in 7 should make sequences <em>less</em> likely to settle. Not more.</p>
 
     <div class="math-block">
       leading number 3 &nbsp;&rarr;&nbsp; expected multiplier <span class="k">3/4</span> &nbsp;(contraction, why 3 is tractable)<br>
       leading number 7 &nbsp;&rarr;&nbsp; expected multiplier <span class="k">7/4</span> &nbsp;(growth, expected to diverge)
     </div>
 
-    <p>What's true, and what the earlier claim was actually pointing at, is narrower than "Mersenne primes make the problem easier." It's a fact about the number one, specifically: for any Mersenne prime, one step from one lands exactly on a power of two, which halves cleanly all the way back down. That part holds up. It's clean. And it has nothing to do with how a Mersenne prime behaves as a multiplier starting from anywhere else. A true fact about a single starting value, mistaken, in the moment, for a trend across all of them.</p>
+    <p>What's true, and what the earlier claim was actually pointing at, is narrower than "Mersenne primes make the problem easier."</p>
 
-    <p>There's a moment worth sitting with before the arithmetic settles it, because it's where the mistake actually happens. Not in a calculation. In a word. The question on the table was whether swapping 3 for 7 meant changing the rule itself: divide by a bigger number to "compensate" for the bigger multiplier. The answer is no. The division always stays by 2. What changes is how <em>many times</em> 2 divides in, and that number isn't something you choose. It's something the arithmetic decides on its own, differently for every starting number. Mistaking a property of one specific case, the clean, guaranteed triple-halving that happens starting from 1, for a rule about the operation itself, is a small slip. It's also exactly the kind of slip that a hand computation, run far enough, cannot help but catch.</p>
+    <p>It's a fact about the number one, specifically: a Mersenne prime plus one is always a power of two by definition. One step from 1 lands exactly on that power of two. That power of two halves down to 1 in a fixed number of steps, no exceptions.</p>
+
+    <p>That single computation holds for every Mersenne prime, not just 7. It has nothing to do with how a Mersenne prime behaves as a multiplier starting from anywhere else.</p>
+
+    <p class="beat">Something true about one specific number, stretched, for a moment, into a claim about all of them.</p>
+
+    <p>The mistake didn't happen in a calculation. It happened in a word. The question on the table was whether swapping 3 for 7 meant changing the rule itself: divide by a bigger number to "compensate" for the bigger multiplier. The answer is no. The division always stays by 2. What changes is how <em>many times</em> 2 divides in, and that number isn't something you choose. It's something the arithmetic decides on its own, differently for every starting number. Mistaking a property of one specific case, the clean, guaranteed triple-halving that happens starting from 1, for a rule about the operation itself, is a small slip. It's also exactly the kind of slip that a hand computation, run far enough, cannot help but catch.</p>
 
     <p>What doesn't hold up, at least not that night, is the hand computation sent to test it. Starting from three, applying the 7n+1 rule by hand:</p>
 
@@ -349,24 +386,39 @@
     <p class="beat">Past a hundred thousand.</p>
     <p class="beat">Past a million.</p>
 
-    <p>No sign of turning back toward one. That's not a fluke. It's exactly what the 7/4 expected multiplier predicts. At some point the hand trace is just lost. Not resolved. Not disproven. Dropped, mid-calculation, with an honest admission that it needed to be run properly instead of guessed at.</p>
+    <p>No sign of turning back toward one. That's not a fluke. It's exactly what the 7/4 expected multiplier predicts. At some point the hand trace is just lost. Not resolved. Not disproven. Dropped, mid-calculation, with a note that it needed to be run properly instead of guessed at.</p>
 
     <div class="stepline"><div class="dot"></div><div class="line"></div><div class="dot"></div></div>
 
-    <p>A genuine fact about the number one, mistaken for a trend, sitting right next to a hand computation that was already disproving the generalization in real time, before anyone stopped to read it that way. Sharp intuition. An overreach that went unchecked in the moment. Arithmetic that told the truth before anyone asked it to. That tension is going to show up again. Worth remembering here, at the start, before everything that comes later papers over it.</p>
+    <p>One fact about the number one, mistaken for a trend.</p>
+
+    <p>Sitting right next to a hand computation that had already proven it wrong.</p>
+
+    <p>Sharp intuition.</p>
+
+    <p>An overreach that went unchecked in the moment.</p>
+
+    <p>Arithmetic that told the truth before anyone asked it to.</p>
+
+    <p>That's the pattern to watch for in every episode that follows:</p>
+
+    <p>an insight and an unverified leap,</p>
+
+    <p>arriving in the same breath.</p>
 
     <div class="open-q">
       <div class="label">Where it was left</div>
-      <p>Does 7n+1 actually diverge? Or does it turn, somewhere no one's checked yet? The code still hadn't been run.</p>
+      <p>Does 7n+1 actually <a href="https://en.wikipedia.org/wiki/Divergent_series" target="_blank" rel="noopener">diverge</a> (keep climbing forever instead of settling back to one)? Or does it turn, somewhere no one's checked yet? The code still hadn't been run.</p>
     </div>
 
-    <p class="beat">That's next.</p>
+    <p class="beat">The numbers were already running.</p>
+    <p class="beat">Nobody had pressed go yet.</p>
 
     <div class="next-episode">
       <div class="next-label">Next &middot; Episode Two</div>
       <div class="next-title">Running the Numbers</div>
       <p class="next-teaser">The code finally runs on 7n+1. The heuristic said growth. The question is whether growth means it climbs forever, or just climbs longer than anyone expected to check by hand.</p>
-      <a href="#" class="next-link">Coming soon &rarr;</a>
+      <a href="episode-two.html" class="next-link">Read it &rarr;</a>
     </div>
   </article>
 
