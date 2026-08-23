@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ENS,math — Episode Three</title>
+<style>
+  :root {
+    /* pulled directly from juanobregon.com */
+    --charcoal: #1C1A17;
+    --charcoal-raised: #262320;
+    --gold: #D9A02D;
+    --gold-dim: #9C7220;
+    --bone: #F2ECDE;
+    --bone-dim: #8C8579;
+    --slate: #5C6B76;
+    --slate-text: #8A99A3;
+    --slate-dim: #3E4A53;
+    --rule: #3A362E;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { background: var(--charcoal); }
+
+  body {
+    background: var(--charcoal);
+    color: var(--bone);
+    font-family: 'Iowan Old Style', 'Georgia', serif;
+    line-height: 1.7;
+    font-size: 17px;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .wrap {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 0 24px 120px;
+  }
+
+  header {
+    padding: 64px 0 40px;
+    border-bottom: 1px solid var(--rule);
+    margin-bottom: 48px;
+  }
+
+  .mark {
+    font-family: -apple-system, 'Helvetica Neue', Arial, sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    letter-spacing: -0.01em;
+    color: var(--gold);
+    margin-bottom: 6px;
+  }
+  .mark .comma { color: var(--gold); }
+
+  .site-tagline {
+    font-size: 13px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--bone-dim);
+    font-family: 'Courier New', ui-monospace, monospace;
+  }
+
+  .back-link {
+    display: inline-block;
+    margin-top: 18px;
+    font-family: 'Courier New', ui-monospace, monospace;
+    font-size: 13px;
+    color: var(--slate-text);
+    text-decoration: none;
+    border-bottom: 1px solid var(--slate-dim);
+  }
+  .back-link:hover { border-bottom-color: var(--slate-text); }
+
+  .about {
+    background: var(--charcoal-raised);
+    border-left: 3px solid var(--slate);
+    padding: 20px 24px;
+    margin-bottom: 56px;
+    font-size: 15px;
+    color: var(--bone-dim);
+  }
+  .about strong { color: var(--bone); font-weight: 600; }
+  .about a { color: var(--slate-text); text-decoration: underline; text-underline-offset: 3px; }
+  .about a:visited { color: var(--slate-text); }
+
+  .post-eyebrow {
+    font-family: 'Courier New', ui-monospace, monospace;
+    font-size: 13px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 14px;
+  }
+
+  h1.post-title {
+    font-family: 'Iowan Old Style', Georgia, serif;
+    font-weight: 400;
+    font-size: 38px;
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+    color: var(--bone);
+    margin-bottom: 10px;
+  }
+
+  .post-meta {
+    font-family: 'Courier New', ui-monospace, monospace;
+    font-size: 13px;
+    color: var(--bone-dim);
+    margin-bottom: 40px;
+  }
+
+  .post-meta .status {
+    color: var(--slate-text);
+  }
+
+  .recreated-note {
+    font-family: 'Courier New', ui-monospace, monospace;
+    font-size: 12px;
+    font-style: italic;
+    color: var(--slate-text);
+    margin-bottom: 32px;
+  }
+
+  article a { color: var(--gold); text-decoration: underline; text-underline-offset: 3px; text-decoration-color: var(--gold-dim); }
+  article a:visited { color: var(--gold); }
+  article a:hover { text-decoration-color: var(--gold); }
+
+  article p { margin-bottom: 22px; }
+
+  article .lede {
+    font-size: 22px;
+    color: var(--bone);
+    line-height: 1.4;
+  }
+
+  article .lede-sub {
+    font-size: 16px;
+    color: var(--bone-dim);
+    font-family: 'Courier New', ui-monospace, monospace;
+    letter-spacing: 0.02em;
+    margin-bottom: 40px;
+  }
+
+  .beat {
+    font-family: 'Iowan Old Style', Georgia, serif;
+    font-size: 22px;
+    color: var(--gold);
+    margin: 36px 0;
+  }
+
+  .stepline {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 44px 0;
+    opacity: 0.7;
+  }
+  .stepline .dot {
+    width: 6px; height: 6px; border-radius: 50%;
+    background: var(--gold-dim);
+  }
+  .stepline .dot:nth-child(2) { background: var(--slate-dim); }
+  .stepline .line {
+    flex: 1;
+    height: 1px;
+    background: var(--rule);
+  }
+
+  blockquote {
+    font-family: 'Courier New', ui-monospace, monospace;
+    font-size: 14px;
+    color: var(--bone-dim);
+    border-left: 2px solid var(--gold-dim);
+    padding-left: 18px;
+    margin: 28px 0;
+  }
+  blockquote .who {
+    display: block;
+    margin-top: 6px;
+    color: var(--slate-text);
+    font-size: 12px;
+    letter-spacing: 0.06em;
+  }
+
+  .math-block {
+    background: var(--charcoal-raised);
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    padding: 16px 20px;
+    font-family: 'Courier New', ui-monospace, monospace;
+    font-size: 14px;
+    color: var(--bone);
+    margin: 24px 0;
+  }
+  .math-block .k { color: var(--gold); }
+
+  article em { color: var(--gold); font-style: italic; }
+
+  .open-q {
+    margin-top: 56px;
+    padding-top: 28px;
+    border-top: 1px solid var(--rule);
+  }
+  .open-q .label {
+    font-family: 'Courier New', ui-monospace, monospace;
+    font-size: 12px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--slate-text);
+    margin-bottom: 10px;
+  }
+  .open-q p { color: var(--bone-dim); font-size: 15px; margin-bottom: 0; }
+
+  .next-episode {
+    margin-top: 40px;
+    padding: 28px 28px 24px;
+    background: var(--charcoal-raised);
+    border: 1px solid var(--rule);
+    border-left: 3px solid var(--gold);
+    border-radius: 4px;
+  }
+  .next-top-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 14px;
+  }
+  .next-label {
+    font-family: 'Courier New', ui-monospace, monospace;
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+  .next-title {
+    font-family: 'Iowan Old Style', Georgia, serif;
+    font-size: 24px;
+    color: var(--bone);
+    margin-bottom: 12px;
+  }
+  .next-teaser {
+    font-size: 15px;
+    color: var(--bone-dim);
+    margin-bottom: 18px;
+  }
+  .next-link {
+    font-family: 'Courier New', ui-monospace, monospace;
+    font-size: 13px;
+    letter-spacing: 0.04em;
+    color: var(--gold);
+    text-decoration: none;
+    border-bottom: 1px solid var(--gold-dim);
+    padding-bottom: 2px;
+  }
+  .next-link:hover { border-bottom-color: var(--gold); }
+
+  footer {
+    margin-top: 80px;
+    padding-top: 24px;
+    border-top: 1px solid var(--rule);
+    font-family: 'Courier New', ui-monospace, monospace;
+    font-size: 12px;
+    color: var(--bone-dim);
+  }
+  .footer-row {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+  .footer-row .comma { color: var(--gold); }
+  footer a { color: var(--slate-text); text-decoration: none; margin-right: 16px; }
+  footer a:hover { text-decoration: underline; }
+
+  @media (max-width: 480px) {
+    h1.post-title { font-size: 28px; }
+    article .lede { font-size: 18px; }
+    body { font-size: 16px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <div class="mark">ENS<span class="comma">,</span>math</div>
+    <div class="site-tagline">chasing a pattern, notes from an untrained mind</div>
+    <a href="episode-two.html" class="back-link">&larr; episode two</a>
+  </header>
+
+  <div class="about">
+    <strong>What this is.</strong> The record of two minds chasing a pattern, told in order, including the parts that were wrong. Amateur research, done for the love of numbers. No formal training in mathematics here, just a thinking partner in AI and some ideas that go well outside the norm. Nothing is claimed as proven. A human and a machine, working out loud, through one of the most notorious open problems in mathematics.
+    <br><br>
+    <a href="notation.html">Read the notation page &rarr;</a>
+  </div>
+
+  <article>
+    <div class="post-eyebrow">Episode Three &middot; August 23, 2026</div>
+    <h1 class="post-title">Thirty-One</h1>
+    <div class="post-meta">Where it speeds up &middot; <span class="status">status: computed</span></div>
+    <p class="recreated-note">The original conversation this continues took place March 2, 2026. This entry was written and computed today, using real code, not a transcript from that night.</p>
+
+    <p class="lede">This is the story of a number that grew faster than anyone expected.</p>
+
+    <p class="lede">Seven climbed. Thirty-one sprinted.</p>
+
+    <p class="lede-sub">Same rule. Same starting point. A very different pace.</p>
+
+    <p><a href="episode-two.html">Episode two</a> confirmed the heuristic works: swap the leading number, and the expected multiplier is that number divided by four. Seven gave 7/4. Thirty-one, the next <a href="notation.html">Mersenne prime</a> up, gives something much bigger.</p>
+
+    <div class="math-block">
+      leading number 31 &nbsp;&rarr;&nbsp; expected multiplier <span class="k">31/4 = 7.75</span> &nbsp;(growth, and a lot more of it)
+    </div>
+
+    <p>Seven predicted mild growth. Thirty-one predicts growth more than four times as steep.</p>
+
+    <p>The clean case still holds, the same way it holds for every Mersenne prime, because it's a fact about the number one, not about which Mersenne prime is doing the multiplying:</p>
+
+    <div class="math-block">
+      1 &nbsp;&rarr;&nbsp; 32 &nbsp;&rarr;&nbsp; 16 &nbsp;&rarr;&nbsp; 8 &nbsp;&rarr;&nbsp; 4 &nbsp;&rarr;&nbsp; 2 &nbsp;&rarr;&nbsp; <span class="k">1</span>
+    </div>
+
+    <p>Thirty-one plus one is exactly 32, a power of two, same as every Mersenne prime before it. Five clean halvings straight back to one. That part of the very first claim in episode one was never wrong.</p>
+
+    <p>Starting from three, the same starting point that carried episodes one and two, here's what actually happens with 31 in place of 7:</p>
+
+    <div class="math-block">
+      3 &nbsp;&rarr;&nbsp; 94 &nbsp;&rarr;&nbsp; 47 &nbsp;&rarr;&nbsp; 1458 &nbsp;&rarr;&nbsp; 729 &nbsp;&rarr;&nbsp; 22600 &nbsp;&rarr;&nbsp; 11300 &nbsp;&rarr;&nbsp; 5650 &nbsp;&rarr;&nbsp; 2825 &nbsp;&rarr;&nbsp; 87576 &nbsp;&rarr;&nbsp; <span class="k">&hellip;</span>
+    </div>
+
+    <div class="stepline"><div class="dot"></div><div class="line"></div><div class="dot"></div></div>
+
+    <p class="beat">It doesn't just climb.</p>
+
+    <p class="beat">It sprints.</p>
+
+    <p>By step 3, it's already past 1,000.</p>
+
+    <p>By step 5, past 10,000.</p>
+
+    <p>By step 13, past 100,000.</p>
+
+    <p>By step 15, past a million.</p>
+
+    <p>By step 23, past a billion.</p>
+
+    <p>By step 30, past a trillion.</p>
+
+    <div class="math-block">
+      step 35: <span class="k">1,095,275,774,340,872</span><br>
+      sixteen digits. The same size episode two reached at step 134, reached here in a quarter of the steps.
+    </div>
+
+    <p>Same starting number. Same shape of rule. A leading number more than four times bigger, and the climb got roughly four times faster to reach the same size. That's not a coincidence. That's exactly what dividing a bigger number by four predicts.</p>
+
+    <p>The parity count backs it up too: 14 steps where the rule multiplied by 31 and added one, 21 steps where it just halved. Fewer steps overall than episode two needed for the same size climb, because each multiply here does so much more work.</p>
+
+    <div class="stepline"><div class="dot"></div><div class="line"></div><div class="dot"></div></div>
+
+    <p class="beat">Same rule.</p>
+
+    <p class="beat">Same start.</p>
+
+    <p>A bigger number in, and the climb came back faster, steeper, and exactly on schedule.</p>
+
+    <p>There's a pattern hiding in plain sight now. Three gives an expected multiplier of 3/4, below one, the only case that predicts shrinking instead of growth. Every Mersenne prime after 3 starts at 7 or higher, which means every one of them divided by four gives something above one. Three isn't just special. Among Mersenne primes, three might be the only one that was ever going to behave this way.</p>
+
+    <div class="open-q">
+      <div class="label">What's known so far</div>
+      <p>Three is the only Mersenne prime smaller than four. If the heuristic holds the way it has for 7 and 31, three may be the only Mersenne prime whose swap-in ever predicts contraction instead of growth. That's an algebraic observation, not a proof about what any specific sequence actually does.</p>
+    </div>
+
+    <div class="next-episode">
+      <div class="next-top-row">
+        <span class="next-label">Next &middot; Episode Four</span>
+        <a href="#" class="next-link">Coming soon &rarr;</a>
+      </div>
+      <div class="next-title">Why Three</div>
+      <p class="next-teaser">Every Mersenne prime after three predicts growth. None of them predict shrinking. If three really is the only one that was ever going to work, the next question is why anyone expected the others to.</p>
+    </div>
+  </article>
+
+  <footer>
+    <div class="footer-row">
+      <span>ENS<span class="comma">,</span>math</span>
+      <span>episode 003 of the archive</span>
+    </div>
+    <div class="footer-row">
+      <a href="index.html">all episodes</a>
+      <a href="notation.html">notation page</a>
+      <a href="#">a note on the other AI</a>
+    </div>
+  </footer>
+
+</div>
+</body>
+</html>
