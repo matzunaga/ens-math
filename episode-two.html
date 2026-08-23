@@ -115,6 +115,14 @@
     color: var(--slate-text);
   }
 
+  .recreated-note {
+    font-family: 'Courier New', ui-monospace, monospace;
+    font-size: 12px;
+    font-style: italic;
+    color: var(--slate-text);
+    margin-bottom: 32px;
+  }
+
   article a { color: var(--gold); text-decoration: underline; text-underline-offset: 3px; text-decoration-color: var(--gold-dim); }
   article a:visited { color: var(--gold); }
   article a:hover { text-decoration-color: var(--gold); }
@@ -213,13 +221,20 @@
     border-left: 3px solid var(--gold);
     border-radius: 4px;
   }
+  .next-top-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 14px;
+  }
   .next-label {
     font-family: 'Courier New', ui-monospace, monospace;
     font-size: 11px;
     letter-spacing: 0.14em;
     text-transform: uppercase;
     color: var(--gold);
-    margin-bottom: 8px;
   }
   .next-title {
     font-family: 'Iowan Old Style', Georgia, serif;
@@ -281,17 +296,20 @@
   <div class="about">
     <strong>What this is.</strong> The record of two minds chasing a pattern, told in order, including the parts that were wrong. Amateur research, done for the love of numbers. No formal training in mathematics here, just a thinking partner in AI and some ideas that go well outside the norm. Nothing is claimed as proven. A human and a machine, working out loud, through one of the most notorious open problems in mathematics.
     <br><br>
-    <a href="notation.html">Read the notation page &rarr;</a> &nbsp;&middot;&nbsp; <a href="#">A note on the other AI &rarr;</a>
+    <a href="notation.html">Read the notation page &rarr;</a>
   </div>
 
   <article>
     <div class="post-eyebrow">Episode Two &middot; August 23, 2026</div>
     <h1 class="post-title">Running the Numbers</h1>
     <div class="post-meta">Where it picks up &middot; <span class="status">status: computed</span></div>
+    <p class="recreated-note">The original conversation this continues took place March 2, 2026. This entry was written and computed today, using real code, not a transcript from that night.</p>
 
     <p class="lede">This is the story of numbers that were already running.</p>
 
-    <p class="lede">No one had watched them yet.</p>
+    <p class="lede">No one had watched them.</p>
+
+    <p class="lede">Yet.</p>
 
     <p class="lede-sub">Today, someone finally did.</p>
 
@@ -334,11 +352,15 @@
       sixteen digits. Past a quadrillion and a half (a one followed by fifteen zeros).
     </div>
 
-    <p>The run was stopped there on purpose, capped at that size to keep the computation finite. The sequence wasn't. Nothing in the data on the way up shows any sign of turning around.</p>
+    <p>The run got stopped there, on purpose. A machine has to stop somewhere. The sequence didn't stop with it. Nothing in the climb ever turned around.</p>
 
-    <p>That's not proof. A computer stopping a run isn't the same as a number choosing to change direction. What it is: the strongest evidence available so far, and it lines up exactly with what the 7/4 expected multiplier predicted, and exactly against what the opening claim about Mersenne primes assumed.</p>
+    <p>That's not proof.</p>
 
-    <p>Along the way: 48 odd steps, 86 even steps. An average of just under two halvings per multiply-by-seven step, close to the heuristic's predicted average of two. The theory and the arithmetic agree with each other, even while both disagree with where this whole thing started.</p>
+    <p>A computer stopping a run isn't the same as a number choosing to change direction.</p>
+
+    <p>What's actually on the record is the strongest evidence available so far. It lines up exactly with what the 7/4 expected multiplier predicted, and exactly against what the opening claim about Mersenne primes assumed.</p>
+
+    <p>One more thing showed up buried in the count. Forty-eight times the rule multiplied by seven and added one. Eighty-six times it just halved. Almost two halvings for every multiply, close to what the heuristic predicted before a single number got computed. The theory called its shot before the arithmetic ever ran.</p>
 
     <div class="stepline"><div class="dot"></div><div class="line"></div><div class="dot"></div></div>
 
@@ -349,15 +371,17 @@
     <p>And an opening claim about Mersenne primes, now sitting overturned by its own numbers.</p>
 
     <div class="open-q">
-      <div class="label">Where it stands</div>
+      <div class="label">What's known so far</div>
       <p>Nobody has proven this sequence never turns back. Nobody has proven it doesn't either. What's on record now is 134 steps and sixteen digits of climbing, with nothing in the data pointing the other way.</p>
     </div>
 
     <div class="next-episode">
-      <div class="next-label">Next &middot; Episode Three</div>
+      <div class="next-top-row">
+        <span class="next-label">Next &middot; Episode Three</span>
+        <a href="episode-three.html" class="next-link">Read it &rarr;</a>
+      </div>
       <div class="next-title">Thirty-One</div>
       <p class="next-teaser">Seven grew. What about 31, the next Mersenne prime up? Same heuristic, a bigger leading number, a question still unrun.</p>
-      <a href="#" class="next-link">Coming soon &rarr;</a>
     </div>
   </article>
 
@@ -367,7 +391,7 @@
       <span>episode 002 of the archive</span>
     </div>
     <div class="footer-row">
-      <a href="#">all episodes</a>
+      <a href="index.html">all episodes</a>
       <a href="notation.html">notation page</a>
       <a href="#">a note on the other AI</a>
     </div>
