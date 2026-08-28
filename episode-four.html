@@ -3,27 +3,27 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Thirty-One — ENS,math | Collatz Research Log, Episode 3</title>
-<meta name="description" content="Same rule, a Mersenne prime four times bigger than seven. Thirty-one reaches sixteen digits in a quarter of the steps, exactly as the heuristic predicted.">
-<link rel="canonical" href="https://matzunaga.github.io/ens-math/episode-three.html">
+<title>Why Three &mdash; ENS,math | Collatz Research Log, Episode 4</title>
+<meta name="description" content="Only one Mersenne prime predicts contraction under the swap heuristic. The algebra says why three, and only three, was ever going to work.">
+<link rel="canonical" href="https://matzunaga.github.io/ens-math/episode-four.html">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Thirty-One — ENS,math | Episode 3">
-<meta property="og:description" content="Same rule, a Mersenne prime four times bigger than seven. Thirty-one reaches sixteen digits in a quarter of the steps, exactly as the heuristic predicted.">
-<meta property="og:url" content="https://matzunaga.github.io/ens-math/episode-three.html">
+<meta property="og:title" content="Why Three &mdash; ENS,math | Episode 4">
+<meta property="og:description" content="Only one Mersenne prime predicts contraction under the swap heuristic. The algebra says why three, and only three, was ever going to work.">
+<meta property="og:url" content="https://matzunaga.github.io/ens-math/episode-four.html">
 <meta property="og:site_name" content="ENS,math">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Thirty-One — ENS,math | Episode 3">
-<meta name="twitter:description" content="Same rule, a Mersenne prime four times bigger than seven. Thirty-one reaches sixteen digits in a quarter of the steps, exactly as the heuristic predicted.">
+<meta name="twitter:title" content="Why Three &mdash; ENS,math | Episode 4">
+<meta name="twitter:description" content="Only one Mersenne prime predicts contraction under the swap heuristic. The algebra says why three, and only three, was ever going to work.">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "BlogPosting",
-  "headline": "Thirty-One",
-  "description": "Same rule, a Mersenne prime four times bigger than seven. Thirty-one reaches sixteen digits in a quarter of the steps, exactly as the heuristic predicted.",
-  "datePublished": "2026-08-23",
+  "headline": "Why Three",
+  "description": "Only one Mersenne prime predicts contraction under the swap heuristic. The algebra says why three, and only three, was ever going to work.",
+  "datePublished": "2026-08-28",
   "author": { "@type": "Person", "name": "Matzunaga" },
   "publisher": { "@type": "Organization", "name": "ENS,math" },
-  "mainEntityOfPage": "https://matzunaga.github.io/ens-math/episode-three.html"
+  "mainEntityOfPage": "https://matzunaga.github.io/ens-math/episode-four.html"
 }
 </script>
 <style>
@@ -312,7 +312,7 @@
   <header>
     <div class="mark">ENS<span class="comma">,</span>math</div>
     <div class="site-tagline">chasing a pattern, notes from an untrained mind</div>
-    <a href="episode-two.html" class="back-link">&larr; episode two</a>
+    <a href="episode-three.html" class="back-link">&larr; episode three</a>
   </header>
 
   <div class="about">
@@ -322,95 +322,73 @@
   </div>
 
   <article>
-    <div class="post-eyebrow">Episode Three &middot; August 23, 2026</div>
-    <h1 class="post-title">Thirty-One</h1>
-    <div class="post-meta">Where it speeds up &middot; <span class="status">status: computed</span></div>
-    <p class="recreated-note">The original conversation this continues took place March 2, 2026. This entry was written and computed today, using real code, not a transcript from that night.</p>
+    <div class="post-eyebrow">Episode Four &middot; August 28, 2026</div>
+    <h1 class="post-title">Why Three</h1>
+    <div class="post-meta">Where the case closes &middot; <span class="status">status: proven</span></div>
 
-    <p class="lede">This is the story of a number that grew faster than anyone expected.</p>
+    <p class="lede">This is the story of a number that was never actually competing.</p>
 
-    <p class="lede">Seven climbed. Thirty-one sprinted.</p>
+    <p class="lede">Three didn't win by being the best of its family.</p>
 
-    <p class="lede-sub">Same rule. Same starting point. A very different pace.</p>
+    <p class="lede-sub">It won because it was the only member of that family built to.</p>
 
-    <p><a href="episode-two.html">Episode two</a> confirmed the heuristic works: swap the leading number, and the expected multiplier is that number divided by four. Seven gave 7/4. Thirty-one, the next <a href="notation.html">Mersenne prime</a> up, gives something much bigger.</p>
+    <p><a href="episode-three.html">Episode three</a> left one line hanging: three might be the only <a href="notation.html">Mersenne prime</a> whose swap-in ever predicts contraction instead of growth. That was an observation sitting on two data points, seven and thirty-one. An observation isn't a proof. Here's the proof.</p>
 
-    <div class="math-block">
-      leading number 31 &nbsp;&rarr;&nbsp; expected multiplier <span class="k">31/4 = 7.75</span> &nbsp;(growth, and a lot more of it)
-    </div>
-
-    <p>Seven predicted mild growth. Thirty-one predicts growth more than four times as steep.</p>
-
-    <p>The clean case still holds, the same way it holds for every Mersenne prime, because it's a fact about the number one, not about which Mersenne prime is doing the multiplying:</p>
+    <p>A Mersenne prime takes the form two to the power of <span class="k"></span>p, minus one, where p itself has to be prime. Three is two squared minus one, p equals two. Seven is two cubed minus one, p equals three. Thirty-one is two to the fifth minus one, p equals five. The heuristic from episode two says the expected multiplier, when that Mersenne prime stands in for the leading three in the rule, is the Mersenne prime divided by four.</p>
 
     <div class="math-block">
-      1 &nbsp;&rarr;&nbsp; 32 &nbsp;&rarr;&nbsp; 16 &nbsp;&rarr;&nbsp; 8 &nbsp;&rarr;&nbsp; 4 &nbsp;&rarr;&nbsp; 2 &nbsp;&rarr;&nbsp; <span class="k">1</span>
+      expected multiplier &nbsp;&rarr;&nbsp; <span class="k">(2<sup>p</sup> &minus; 1) / 4</span>
     </div>
 
-    <p>Thirty-one plus one is exactly 32, a power of two, same as every Mersenne prime before it. Five clean halvings straight back to one. That part of the very first claim in episode one was never wrong.</p>
-
-    <p>Starting from three, the same starting point that carried episodes one and two, here's what actually happens with 31 in place of 7:</p>
+    <p>Contraction means that multiplier has to land below one. Set up the inequality and solve it plainly:</p>
 
     <div class="math-block">
-      3 &nbsp;&rarr;&nbsp; 94 &nbsp;&rarr;&nbsp; 47 &nbsp;&rarr;&nbsp; 1458 &nbsp;&rarr;&nbsp; 729 &nbsp;&rarr;&nbsp; 22600 &nbsp;&rarr;&nbsp; 11300 &nbsp;&rarr;&nbsp; 5650 &nbsp;&rarr;&nbsp; 2825 &nbsp;&rarr;&nbsp; 87576 &nbsp;&rarr;&nbsp; <span class="k">&hellip;</span>
+      (2<sup>p</sup> &minus; 1) / 4 &lt; 1<br>
+      2<sup>p</sup> &minus; 1 &lt; 4<br>
+      2<sup>p</sup> &lt; <span class="k">5</span>
     </div>
+
+    <p>Two to the power of p has to come in under five. Two to the first power is two. Two squared is four. Two cubed is already eight, past the line for good, and every power after that only climbs. So the exponent has to be one or two for the inequality to hold at all.</p>
+
+    <p class="beat">That's the first condition.</p>
+
+    <p>The second condition is the one that was already sitting in the definition. A Mersenne prime requires p itself to be prime, not just the result. One is not a prime number, by definition, no exceptions. That leaves exactly one candidate that satisfies both conditions at once.</p>
+
+    <div class="math-block">
+      p must be prime &nbsp;<span class="k">and</span>&nbsp; p &le; 2 &nbsp;&rarr;&nbsp; the only prime at or under two is <span class="k">p = 2</span>
+    </div>
+
+    <p>p equals two gives two squared minus one, which is three. Nothing else on the prime number line is small enough. Five is prime but 2 to the fifth is 32, nowhere near under five. Seven's exponent alone breaks the inequality before the primality check even matters.</p>
 
     <div class="stepline"><div class="dot"></div><div class="line"></div><div class="dot"></div></div>
 
-    <p class="beat">It doesn't just climb.</p>
+    <p class="beat">Two requirements.</p>
 
-    <p class="beat">It sprints.</p>
+    <p class="beat">One overlap.</p>
 
-    <p>By step 3, it's already past 1,000.</p>
+    <p>Three wasn't the strongest performer in a field of contenders. It was the only number that could satisfy both conditions simultaneously. Every other Mersenne prime fails the size test before anyone gets to ask whether it predicts growth or shrinkage &mdash; the exponent alone rules it out.</p>
 
-    <p>By step 5, past 10,000.</p>
-
-    <p>By step 13, past 100,000.</p>
-
-    <p>By step 15, past a million.</p>
-
-    <p>By step 23, past a billion.</p>
-
-    <p>By step 30, past a trillion.</p>
-
-    <div class="math-block">
-      step 35: <span class="k">1,095,275,774,340,872</span><br>
-      sixteen digits. The same size episode two reached at step 134, reached here in a quarter of the steps.
-    </div>
-
-    <p>Same starting number. Same shape of rule. A leading number more than four times bigger, and the climb got roughly four times faster to reach the same size. That's not a coincidence. That's exactly what dividing a bigger number by four predicts.</p>
-
-    <p>The parity count backs it up too: 14 steps where the rule multiplied by 31 and added one, 21 steps where it just halved. Fewer steps overall than episode two needed for the same size climb, because each multiply here does so much more work.</p>
-
-    <div class="stepline"><div class="dot"></div><div class="line"></div><div class="dot"></div></div>
-
-    <p class="beat">Same rule.</p>
-
-    <p class="beat">Same start.</p>
-
-    <p>A bigger number in, and the climb came back faster, steeper, and exactly on schedule.</p>
-
-    <p>There's a pattern hiding in plain sight now. Three gives an expected multiplier of 3/4, below one, the only case that predicts shrinking instead of growth. Every Mersenne prime after 3 starts at 7 or higher, which means every one of them divided by four gives something above one. Three isn't just special. Among Mersenne primes, three might be the only one that was ever going to behave this way.</p>
+    <p>This closes the question episode three opened but leaves a separate one standing, and it matters more than the algebra does. The heuristic predicting contraction for three is not the same claim as the real, unswapped rule actually reaching one. Nobody has proven that. This proof says three is alone in one narrow sense: among Mersenne primes, it is the only leading number the heuristic favors. It says nothing about whether the heuristic is even the right way to think about the real sequence in the first place.</p>
 
     <div class="open-q">
-      <div class="label">What's known so far</div>
-      <p>Three is the only Mersenne prime smaller than four. If the heuristic holds the way it has for 7 and 31, three may be the only Mersenne prime whose swap-in ever predicts contraction instead of growth. That's an algebraic observation, not a proof about what any specific sequence actually does.</p>
+      <div class="label">Where it stands</div>
+      <p>Three is provably the only Mersenne prime whose swap-in predicts contraction under this heuristic. That is now closed. What remains open: the heuristic explaining why the swap-outs fail as easy substitutes was never a proof that the original, unmodified rule succeeds either. That's a different question, and it's still sitting there unanswered.</p>
     </div>
 
     <div class="next-episode">
       <div class="next-top-row">
-        <span class="next-label">Next &middot; Episode Four</span>
-        <a href="episode-four.html" class="next-link">Read it &rarr;</a>
+        <span class="next-label">Next &middot; Episode Five</span>
+        <a href="episode-five.html" class="next-link">Read it &rarr;</a>
       </div>
-      <div class="next-title">Why Three</div>
-      <p class="next-teaser">Every Mersenne prime after three predicts growth. None of them predict shrinking. If three really is the only one that was ever going to work, the next question is why anyone expected the others to.</p>
+      <div class="next-title">Twenty-Seven</div>
+      <p class="next-teaser">Four episodes of swapping the leading number and watching the heuristic call its shot. Time to put the real rule, three exactly as written, up against the small number with the worst reputation for cooperating.</p>
     </div>
   </article>
 
   <footer>
     <div class="footer-row">
       <span>ENS<span class="comma">,</span>math</span>
-      <span>episode 003 of the archive</span>
+      <span>episode 004 of the archive</span>
     </div>
     <div class="footer-row">
       <a href="index.html">all episodes</a>

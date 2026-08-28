@@ -3,27 +3,27 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Thirty-One — ENS,math | Collatz Research Log, Episode 3</title>
-<meta name="description" content="Same rule, a Mersenne prime four times bigger than seven. Thirty-one reaches sixteen digits in a quarter of the steps, exactly as the heuristic predicted.">
-<link rel="canonical" href="https://matzunaga.github.io/ens-math/episode-three.html">
+<title>The Peak Always Lands the Same Way &mdash; ENS,math | Episode 6</title>
+<meta name="description" content="Every Collatz peak checked so far lands on the same residue class mod six. The reason is three lines of parity, not a coincidence.">
+<link rel="canonical" href="https://matzunaga.github.io/ens-math/episode-six.html">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Thirty-One — ENS,math | Episode 3">
-<meta property="og:description" content="Same rule, a Mersenne prime four times bigger than seven. Thirty-one reaches sixteen digits in a quarter of the steps, exactly as the heuristic predicted.">
-<meta property="og:url" content="https://matzunaga.github.io/ens-math/episode-three.html">
+<meta property="og:title" content="The Peak Always Lands the Same Way &mdash; ENS,math | Episode 6">
+<meta property="og:description" content="Every Collatz peak checked so far lands on the same residue class mod six. The reason is three lines of parity, not a coincidence.">
+<meta property="og:url" content="https://matzunaga.github.io/ens-math/episode-six.html">
 <meta property="og:site_name" content="ENS,math">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Thirty-One — ENS,math | Episode 3">
-<meta name="twitter:description" content="Same rule, a Mersenne prime four times bigger than seven. Thirty-one reaches sixteen digits in a quarter of the steps, exactly as the heuristic predicted.">
+<meta name="twitter:title" content="The Peak Always Lands the Same Way &mdash; ENS,math | Episode 6">
+<meta name="twitter:description" content="Every Collatz peak checked so far lands on the same residue class mod six. The reason is three lines of parity, not a coincidence.">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "BlogPosting",
-  "headline": "Thirty-One",
-  "description": "Same rule, a Mersenne prime four times bigger than seven. Thirty-one reaches sixteen digits in a quarter of the steps, exactly as the heuristic predicted.",
-  "datePublished": "2026-08-23",
+  "headline": "The Peak Always Lands the Same Way",
+  "description": "Every Collatz peak checked so far lands on the same residue class mod six. The reason is three lines of parity, not a coincidence.",
+  "datePublished": "2026-08-28",
   "author": { "@type": "Person", "name": "Matzunaga" },
   "publisher": { "@type": "Organization", "name": "ENS,math" },
-  "mainEntityOfPage": "https://matzunaga.github.io/ens-math/episode-three.html"
+  "mainEntityOfPage": "https://matzunaga.github.io/ens-math/episode-six.html"
 }
 </script>
 <style>
@@ -312,7 +312,7 @@
   <header>
     <div class="mark">ENS<span class="comma">,</span>math</div>
     <div class="site-tagline">chasing a pattern, notes from an untrained mind</div>
-    <a href="episode-two.html" class="back-link">&larr; episode two</a>
+    <a href="episode-five.html" class="back-link">&larr; episode five</a>
   </header>
 
   <div class="about">
@@ -322,95 +322,83 @@
   </div>
 
   <article>
-    <div class="post-eyebrow">Episode Three &middot; August 23, 2026</div>
-    <h1 class="post-title">Thirty-One</h1>
-    <div class="post-meta">Where it speeds up &middot; <span class="status">status: computed</span></div>
-    <p class="recreated-note">The original conversation this continues took place March 2, 2026. This entry was written and computed today, using real code, not a transcript from that night.</p>
+    <div class="post-eyebrow">Episode Six &middot; August 28, 2026</div>
+    <h1 class="post-title">The Peak Always Lands the Same Way</h1>
+    <div class="post-meta">Where a coincidence stops being one &middot; <span class="status">status: proven</span></div>
 
-    <p class="lede">This is the story of a number that grew faster than anyone expected.</p>
+    <p class="lede">Twenty-seven's climb topped out at 9,232.</p>
 
-    <p class="lede">Seven climbed. Thirty-one sprinted.</p>
+    <p class="lede">That number was not free to land anywhere on the number line.</p>
 
-    <p class="lede-sub">Same rule. Same starting point. A very different pace.</p>
+    <p class="lede-sub">Every peak checked so far has landed in the same narrow slice, and there's a reason.</p>
 
-    <p><a href="episode-two.html">Episode two</a> confirmed the heuristic works: swap the leading number, and the expected multiplier is that number divided by four. Seven gave 7/4. Thirty-one, the next <a href="notation.html">Mersenne prime</a> up, gives something much bigger.</p>
-
-    <div class="math-block">
-      leading number 31 &nbsp;&rarr;&nbsp; expected multiplier <span class="k">31/4 = 7.75</span> &nbsp;(growth, and a lot more of it)
-    </div>
-
-    <p>Seven predicted mild growth. Thirty-one predicts growth more than four times as steep.</p>
-
-    <p>The clean case still holds, the same way it holds for every Mersenne prime, because it's a fact about the number one, not about which Mersenne prime is doing the multiplying:</p>
+    <p><a href="episode-five.html">Episode five</a> ended on a number that seemed arbitrary: 9,232, the highest point twenty-seven reaches before falling back to one. Run the real rule on other odd starting numbers and check where each one peaks. A pattern shows up immediately.</p>
 
     <div class="math-block">
-      1 &nbsp;&rarr;&nbsp; 32 &nbsp;&rarr;&nbsp; 16 &nbsp;&rarr;&nbsp; 8 &nbsp;&rarr;&nbsp; 4 &nbsp;&rarr;&nbsp; 2 &nbsp;&rarr;&nbsp; <span class="k">1</span>
+      n=7 &nbsp;&rarr;&nbsp; peak <span class="k">52</span> &nbsp;&middot;&nbsp; n=27 &nbsp;&rarr;&nbsp; peak <span class="k">9,232</span>
     </div>
 
-    <p>Thirty-one plus one is exactly 32, a power of two, same as every Mersenne prime before it. Five clean halvings straight back to one. That part of the very first claim in episode one was never wrong.</p>
-
-    <p>Starting from three, the same starting point that carried episodes one and two, here's what actually happens with 31 in place of 7:</p>
+    <p>Fifty-two and 9,232 have almost nothing in common on the surface. One is two digits, the other is four. But divide each by six and check the remainder:</p>
 
     <div class="math-block">
-      3 &nbsp;&rarr;&nbsp; 94 &nbsp;&rarr;&nbsp; 47 &nbsp;&rarr;&nbsp; 1458 &nbsp;&rarr;&nbsp; 729 &nbsp;&rarr;&nbsp; 22600 &nbsp;&rarr;&nbsp; 11300 &nbsp;&rarr;&nbsp; 5650 &nbsp;&rarr;&nbsp; 2825 &nbsp;&rarr;&nbsp; 87576 &nbsp;&rarr;&nbsp; <span class="k">&hellip;</span>
+      52 mod 6 = <span class="k">4</span> &nbsp;&nbsp;&nbsp; 9,232 mod 6 = <span class="k">4</span>
     </div>
+
+    <p>Every peak found while writing this episode, across every starting number tried, lands on the same remainder: four, mod six. Not most. Every one. A pattern that consistent stops being interesting as a coincidence and starts being interesting as a thing to prove.</p>
 
     <div class="stepline"><div class="dot"></div><div class="line"></div><div class="dot"></div></div>
 
-    <p class="beat">It doesn't just climb.</p>
+    <p class="beat">The proof turns out to be short.</p>
 
-    <p class="beat">It sprints.</p>
-
-    <p>By step 3, it's already past 1,000.</p>
-
-    <p>By step 5, past 10,000.</p>
-
-    <p>By step 13, past 100,000.</p>
-
-    <p>By step 15, past a million.</p>
-
-    <p>By step 23, past a billion.</p>
-
-    <p>By step 30, past a trillion.</p>
+    <p>Start with what a peak actually is: the single highest value a trajectory ever reaches. Consider how a sequence gets to any point. There are only two ways to arrive somewhere: by halving down from a larger even number, or by climbing up from an odd number through a multiply-and-add-one step. If the peak were reached by halving down, its predecessor would have been twice as large and would have appeared earlier in the same sequence, which is impossible, since the peak is defined as the largest value the whole trajectory ever reaches. So the peak has exactly one way to be reached: it is always the result of a multiply step, applied to some odd number that came right before it.</p>
 
     <div class="math-block">
-      step 35: <span class="k">1,095,275,774,340,872</span><br>
-      sixteen digits. The same size episode two reached at step 134, reached here in a quarter of the steps.
+      peak &nbsp;<span class="k">= 3m + 1</span>&nbsp; for some odd m
     </div>
 
-    <p>Same starting number. Same shape of rule. A leading number more than four times bigger, and the climb got roughly four times faster to reach the same size. That's not a coincidence. That's exactly what dividing a bigger number by four predicts.</p>
+    <p>That single fact already answers half the question. Three times an odd number is odd. Odd plus one is even. So the peak, whatever else is true about it, is always even. That rules out three of the six possible remainders mod six before doing anything else.</p>
 
-    <p>The parity count backs it up too: 14 steps where the rule multiplied by 31 and added one, 21 steps where it just halved. Fewer steps overall than episode two needed for the same size climb, because each multiply here does so much more work.</p>
+    <p>The second half comes from the same equation. Three times m, plus one, leaves a remainder of exactly one when divided by three, regardless of what m is &mdash; three times anything is always a multiple of three, and a multiple of three plus one always lands on remainder one.</p>
+
+    <div class="math-block">
+      peak mod 3 &nbsp;<span class="k">= 1</span>&nbsp; &nbsp;&middot;&nbsp;&nbsp; peak mod 2 &nbsp;<span class="k">= 0</span>
+    </div>
+
+    <p>Even, and one more than a multiple of three. Only one remainder mod six satisfies both conditions at once. Not zero mod six, that's a multiple of three. Not two mod six, that's two more than a multiple of three, not one. Four mod six is the only even remainder that also lands one past a multiple of three.</p>
+
+    <div class="math-block">
+      even &nbsp;<span class="k">and</span>&nbsp; &equiv; 1 (mod 3) &nbsp;&rarr;&nbsp; the only match is <span class="k">peak &equiv; 4 (mod 6)</span>
+    </div>
+
+    <p>This holds for every trajectory that climbs above its starting number. A starting number that never climbs, a power of two counting down to one with no multiply steps at all, has no peak in this sense, its highest point is just where it started. For every other odd number, the peak is forced into the same residue class by nothing more than what multiplying by three and adding one does to parity and divisibility.</p>
 
     <div class="stepline"><div class="dot"></div><div class="line"></div><div class="dot"></div></div>
 
-    <p class="beat">Same rule.</p>
+    <p class="beat">Fifty-two.</p>
 
-    <p class="beat">Same start.</p>
+    <p class="beat">Nine thousand two hundred thirty-two.</p>
 
-    <p>A bigger number in, and the climb came back faster, steeper, and exactly on schedule.</p>
-
-    <p>There's a pattern hiding in plain sight now. Three gives an expected multiplier of 3/4, below one, the only case that predicts shrinking instead of growth. Every Mersenne prime after 3 starts at 7 or higher, which means every one of them divided by four gives something above one. Three isn't just special. Among Mersenne primes, three might be the only one that was ever going to behave this way.</p>
+    <p>Different starting numbers, wildly different scales, the same three-line reason for where each one tops out.</p>
 
     <div class="open-q">
-      <div class="label">What's known so far</div>
-      <p>Three is the only Mersenne prime smaller than four. If the heuristic holds the way it has for 7 and 31, three may be the only Mersenne prime whose swap-in ever predicts contraction instead of growth. That's an algebraic observation, not a proof about what any specific sequence actually does.</p>
+      <div class="label">Where it stands</div>
+      <p>Every peak lands at four mod six. Proven, not just observed, from nothing more than how a multiply-and-add-one step interacts with parity and remainders mod three. What's still open: not every peak is the single highest point of its entire trajectory. Some numbers climb, fall partway, then climb again to a second, different high point. Checking those secondary peaks against the same six-slot grid turns up a second, tighter pattern hiding inside this one.</p>
     </div>
 
     <div class="next-episode">
       <div class="next-top-row">
-        <span class="next-label">Next &middot; Episode Four</span>
-        <a href="episode-four.html" class="next-link">Read it &rarr;</a>
+        <span class="next-label">Next &middot; Episode Seven</span>
+        <a href="#" class="next-link">Coming soon &rarr;</a>
       </div>
-      <div class="next-title">Why Three</div>
-      <p class="next-teaser">Every Mersenne prime after three predicts growth. None of them predict shrinking. If three really is the only one that was ever going to work, the next question is why anyone expected the others to.</p>
+      <div class="next-title">Not All Peaks Are Summits</div>
+      <p class="next-teaser">Every peak lands at four mod six. But the true summit of a trajectory, its single highest point, turns out to land somewhere even narrower than that.</p>
     </div>
   </article>
 
   <footer>
     <div class="footer-row">
       <span>ENS<span class="comma">,</span>math</span>
-      <span>episode 003 of the archive</span>
+      <span>episode 006 of the archive</span>
     </div>
     <div class="footer-row">
       <a href="index.html">all episodes</a>

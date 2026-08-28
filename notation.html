@@ -3,7 +3,17 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ENS,math — Notation</title>
+<title>Notation &mdash; ENS,math | Collatz Research Log Glossary</title>
+<meta name="description" content="Plain-language definitions for every established term used across the ENS,math Collatz conjecture research log, with worked numeric examples.">
+<link rel="canonical" href="https://matzunaga.github.io/ens-math/notation.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Notation &mdash; ENS,math">
+<meta property="og:description" content="Plain-language definitions for every established term used across the ENS,math Collatz conjecture research log, with worked numeric examples.">
+<meta property="og:url" content="https://matzunaga.github.io/ens-math/notation.html">
+<meta property="og:site_name" content="ENS,math">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Notation &mdash; ENS,math">
+<meta name="twitter:description" content="Plain-language definitions for every established term used across the ENS,math Collatz conjecture research log, with worked numeric examples.">
 <style>
   :root {
     --charcoal: #1C1A17;
@@ -168,3 +178,45 @@
     <div class="site-tagline">chasing a pattern, notes from an untrained mind</div>
     <a href="index.html" class="back-link">&larr; back to the archive</a>
   </header>
+
+  <div class="page-eyebrow">Reference</div>
+  <h1 class="page-title">Notation</h1>
+
+  <div class="intro">
+    <strong>What this is.</strong> A running glossary for terms used across the ENS,math archive. Each entry is explained in plain language, links to a free outside source for anyone who wants the formal version, and includes a worked number so the definition isn't just words. New terms get added here as new episodes introduce them.
+  </div>
+
+  <div class="term" id="mersenne-prime">
+    <div class="term-name">Mersenne prime</div>
+    <div class="term-source">first used: episode one</div>
+    <p>A prime number that is one less than a power of two. Not every power of two minus one is prime, but when one is, it gets this name.</p>
+    <p><a href="https://en.wikipedia.org/wiki/Mersenne_prime" target="_blank" rel="noopener">Read more on Wikipedia &rarr;</a></p>
+    <div class="term-example">2<sup>2</sup> &minus; 1 = 3 &nbsp;&middot;&nbsp; 2<sup>3</sup> &minus; 1 = 7 &nbsp;&middot;&nbsp; 2<sup>5</sup> &minus; 1 = 31 &nbsp;&mdash;&nbsp; all three prime, all three Mersenne primes</div>
+  </div>
+
+  <div class="term" id="representativeness-heuristic">
+    <div class="term-name">Representativeness heuristic</div>
+    <div class="term-source">first used: episode five</div>
+    <p>A pattern in how people judge probability: something that looks like a typical example of a category gets assumed to behave like the whole category, even when a single example is too small a sample to prove anything about the average. Borrowed here from psychology to describe the trap of expecting one computed trajectory to perfectly match a predicted average.</p>
+    <p><a href="https://en.wikipedia.org/wiki/Representativeness_heuristic" target="_blank" rel="noopener">Read more on Wikipedia &rarr;</a></p>
+    <div class="term-example">Twenty-seven's real average was 1.71 halvings per step. The heuristic predicted 2.00. One number isn't obligated to look like the average of every number.</div>
+  </div>
+
+  <div class="term" id="insensitivity-to-sample-size">
+    <div class="term-name">Insensitivity to sample size</div>
+    <div class="term-source">first used: episode five</div>
+    <p>The tendency to expect small samples to match the same odds as large ones. A coin flipped ten times doesn't owe anyone exactly five heads, and a trajectory with forty-one halving-runs doesn't owe anyone exactly the predicted average either. Small counts are allowed more spread than the long-run average promises.</p>
+    <p><a href="https://en.wikipedia.org/wiki/Insensitivity_to_sample_size" target="_blank" rel="noopener">Read more on Wikipedia &rarr;</a></p>
+    <div class="term-example">41 halving-runs averaging 1.71 instead of the heuristic's predicted 2.00 isn't a broken rule, it's a small sample.</div>
+  </div>
+
+  <footer>
+    <div class="footer-row">
+      <span>ENS<span class="comma">,</span>math</span>
+      <a href="index.html">all episodes</a>
+    </div>
+  </footer>
+
+</div>
+</body>
+</html>
