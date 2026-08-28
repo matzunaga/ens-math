@@ -5,397 +5,397 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ENS,math — Episode Two</title>
 <style>
-  :root {
-    /* pulled directly from juanobregon.com */
-    --charcoal: #1C1A17;
-    --charcoal-raised: #262320;
-    --gold: #D9A02D;
-    --gold-dim: #9C7220;
-    --bone: #F2ECDE;
-    --bone-dim: #8C8579;
-    --slate: #5C6B76;
-    --slate-text: #8A99A3;
-    --slate-dim: #3E4A53;
-    --rule: #3A362E;
-  }
+:root {
+/* pulled directly from juanobregon.com */
+--charcoal: #1C1A17;
+--charcoal-raised: #262320;
+--gold: #D9A02D;
+--gold-dim: #9C7220;
+--bone: #F2ECDE;
+--bone-dim: #8C8579;
+--slate: #5C6B76;
+--slate-text: #8A99A3;
+--slate-dim: #3E4A53;
+--rule: #3A362E;
+}
 
-  * { box-sizing: border-box; margin: 0; padding: 0; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
 
-  html { background: var(--charcoal); }
+html { background: var(--charcoal); }
 
-  body {
-    background: var(--charcoal);
-    color: var(--bone);
-    font-family: 'Iowan Old Style', 'Georgia', serif;
-    line-height: 1.7;
-    font-size: 17px;
-    -webkit-font-smoothing: antialiased;
-  }
+body {
+background: var(--charcoal);
+color: var(--bone);
+font-family: 'Iowan Old Style', 'Georgia', serif;
+line-height: 1.7;
+font-size: 17px;
+-webkit-font-smoothing: antialiased;
+}
 
-  .wrap {
-    max-width: 680px;
-    margin: 0 auto;
-    padding: 0 24px 120px;
-  }
+.wrap {
+max-width: 680px;
+margin: 0 auto;
+padding: 0 24px 120px;
+}
 
-  header {
-    padding: 64px 0 40px;
-    border-bottom: 1px solid var(--rule);
-    margin-bottom: 48px;
-  }
+header {
+padding: 64px 0 40px;
+border-bottom: 1px solid var(--rule);
+margin-bottom: 48px;
+}
 
-  .mark {
-    font-family: -apple-system, 'Helvetica Neue', Arial, sans-serif;
-    font-weight: 700;
-    font-size: 20px;
-    letter-spacing: -0.01em;
-    color: var(--gold);
-    margin-bottom: 6px;
-  }
-  .mark .comma { color: var(--gold); }
+.mark {
+font-family: -apple-system, 'Helvetica Neue', Arial, sans-serif;
+font-weight: 700;
+font-size: 20px;
+letter-spacing: -0.01em;
+color: var(--gold);
+margin-bottom: 6px;
+}
+.mark .comma { color: var(--gold); }
 
-  .site-tagline {
-    font-size: 13px;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--bone-dim);
-    font-family: 'Courier New', ui-monospace, monospace;
-  }
+.site-tagline {
+font-size: 13px;
+letter-spacing: 0.14em;
+text-transform: uppercase;
+color: var(--bone-dim);
+font-family: 'Courier New', ui-monospace, monospace;
+}
 
-  .back-link {
-    display: inline-block;
-    margin-top: 18px;
-    font-family: 'Courier New', ui-monospace, monospace;
-    font-size: 13px;
-    color: var(--slate-text);
-    text-decoration: none;
-    border-bottom: 1px solid var(--slate-dim);
-  }
-  .back-link:hover { border-bottom-color: var(--slate-text); }
+.back-link {
+display: inline-block;
+margin-top: 18px;
+font-family: 'Courier New', ui-monospace, monospace;
+font-size: 13px;
+color: var(--slate-text);
+text-decoration: none;
+border-bottom: 1px solid var(--slate-dim);
+}
+.back-link:hover { border-bottom-color: var(--slate-text); }
 
-  .about {
-    background: var(--charcoal-raised);
-    border-left: 3px solid var(--slate);
-    padding: 20px 24px;
-    margin-bottom: 56px;
-    font-size: 15px;
-    color: var(--bone-dim);
-  }
-  .about strong { color: var(--bone); font-weight: 600; }
-  .about a { color: var(--slate-text); text-decoration: underline; text-underline-offset: 3px; }
-  .about a:visited { color: var(--slate-text); }
+.about {
+background: var(--charcoal-raised);
+border-left: 3px solid var(--slate);
+padding: 20px 24px;
+margin-bottom: 56px;
+font-size: 15px;
+color: var(--bone-dim);
+}
+.about strong { color: var(--bone); font-weight: 600; }
+.about a { color: var(--slate-text); text-decoration: underline; text-underline-offset: 3px; }
+.about a:visited { color: var(--slate-text); }
 
-  .post-eyebrow {
-    font-family: 'Courier New', ui-monospace, monospace;
-    font-size: 13px;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 14px;
-  }
+.post-eyebrow {
+font-family: 'Courier New', ui-monospace, monospace;
+font-size: 13px;
+letter-spacing: 0.1em;
+text-transform: uppercase;
+color: var(--gold);
+margin-bottom: 14px;
+}
 
-  h1.post-title {
-    font-family: 'Iowan Old Style', Georgia, serif;
-    font-weight: 400;
-    font-size: 38px;
-    line-height: 1.15;
-    letter-spacing: -0.01em;
-    color: var(--bone);
-    margin-bottom: 10px;
-  }
+h1.post-title {
+font-family: 'Iowan Old Style', Georgia, serif;
+font-weight: 400;
+font-size: 38px;
+line-height: 1.15;
+letter-spacing: -0.01em;
+color: var(--bone);
+margin-bottom: 10px;
+}
 
-  .post-meta {
-    font-family: 'Courier New', ui-monospace, monospace;
-    font-size: 13px;
-    color: var(--bone-dim);
-    margin-bottom: 40px;
-  }
+.post-meta {
+font-family: 'Courier New', ui-monospace, monospace;
+font-size: 13px;
+color: var(--bone-dim);
+margin-bottom: 40px;
+}
 
-  .post-meta .status {
-    color: var(--slate-text);
-  }
+.post-meta .status {
+color: var(--slate-text);
+}
 
-  .recreated-note {
-    font-family: 'Courier New', ui-monospace, monospace;
-    font-size: 12px;
-    font-style: italic;
-    color: var(--slate-text);
-    margin-bottom: 32px;
-  }
+.recreated-note {
+font-family: 'Courier New', ui-monospace, monospace;
+font-size: 12px;
+font-style: italic;
+color: var(--slate-text);
+margin-bottom: 32px;
+}
 
-  article a { color: var(--gold); text-decoration: underline; text-underline-offset: 3px; text-decoration-color: var(--gold-dim); }
-  article a:visited { color: var(--gold); }
-  article a:hover { text-decoration-color: var(--gold); }
+article a { color: var(--gold); text-decoration: underline; text-underline-offset: 3px; text-decoration-color: var(--gold-dim); }
+article a:visited { color: var(--gold); }
+article a:hover { text-decoration-color: var(--gold); }
 
-  article p { margin-bottom: 22px; }
+article p { margin-bottom: 22px; }
 
-  article .lede {
-    font-size: 22px;
-    color: var(--bone);
-    line-height: 1.4;
-  }
+article .lede {
+font-size: 22px;
+color: var(--bone);
+line-height: 1.4;
+}
 
-  article .lede-sub {
-    font-size: 16px;
-    color: var(--bone-dim);
-    font-family: 'Courier New', ui-monospace, monospace;
-    letter-spacing: 0.02em;
-    margin-bottom: 40px;
-  }
+article .lede-sub {
+font-size: 16px;
+color: var(--bone-dim);
+font-family: 'Courier New', ui-monospace, monospace;
+letter-spacing: 0.02em;
+margin-bottom: 40px;
+}
 
-  .beat {
-    font-family: 'Iowan Old Style', Georgia, serif;
-    font-size: 22px;
-    color: var(--gold);
-    margin: 36px 0;
-  }
+.beat {
+font-family: 'Iowan Old Style', Georgia, serif;
+font-size: 22px;
+color: var(--gold);
+margin: 36px 0;
+}
 
-  .stepline {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin: 44px 0;
-    opacity: 0.7;
-  }
-  .stepline .dot {
-    width: 6px; height: 6px; border-radius: 50%;
-    background: var(--gold-dim);
-  }
-  .stepline .dot:nth-child(2) { background: var(--slate-dim); }
-  .stepline .line {
-    flex: 1;
-    height: 1px;
-    background: var(--rule);
-  }
+.stepline {
+display: flex;
+align-items: center;
+gap: 10px;
+margin: 44px 0;
+opacity: 0.7;
+}
+.stepline .dot {
+width: 6px; height: 6px; border-radius: 50%;
+background: var(--gold-dim);
+}
+.stepline .dot:nth-child(2) { background: var(--slate-dim); }
+.stepline .line {
+flex: 1;
+height: 1px;
+background: var(--rule);
+}
 
-  blockquote {
-    font-family: 'Courier New', ui-monospace, monospace;
-    font-size: 14px;
-    color: var(--bone-dim);
-    border-left: 2px solid var(--gold-dim);
-    padding-left: 18px;
-    margin: 28px 0;
-  }
-  blockquote .who {
-    display: block;
-    margin-top: 6px;
-    color: var(--slate-text);
-    font-size: 12px;
-    letter-spacing: 0.06em;
-  }
+blockquote {
+font-family: 'Courier New', ui-monospace, monospace;
+font-size: 14px;
+color: var(--bone-dim);
+border-left: 2px solid var(--gold-dim);
+padding-left: 18px;
+margin: 28px 0;
+}
+blockquote .who {
+display: block;
+margin-top: 6px;
+color: var(--slate-text);
+font-size: 12px;
+letter-spacing: 0.06em;
+}
 
-  .math-block {
-    background: var(--charcoal-raised);
-    border: 1px solid var(--rule);
-    border-radius: 4px;
-    padding: 16px 20px;
-    font-family: 'Courier New', ui-monospace, monospace;
-    font-size: 14px;
-    color: var(--bone);
-    margin: 24px 0;
-  }
-  .math-block .k { color: var(--gold); }
+.math-block {
+background: var(--charcoal-raised);
+border: 1px solid var(--rule);
+border-radius: 4px;
+padding: 16px 20px;
+font-family: 'Courier New', ui-monospace, monospace;
+font-size: 14px;
+color: var(--bone);
+margin: 24px 0;
+}
+.math-block .k { color: var(--gold); }
 
-  article em { color: var(--gold); font-style: italic; }
+article em { color: var(--gold); font-style: italic; }
 
-  .open-q {
-    margin-top: 56px;
-    padding-top: 28px;
-    border-top: 1px solid var(--rule);
-  }
-  .open-q .label {
-    font-family: 'Courier New', ui-monospace, monospace;
-    font-size: 12px;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--slate-text);
-    margin-bottom: 10px;
-  }
-  .open-q p { color: var(--bone-dim); font-size: 15px; margin-bottom: 0; }
+.open-q {
+margin-top: 56px;
+padding-top: 28px;
+border-top: 1px solid var(--rule);
+}
+.open-q .label {
+font-family: 'Courier New', ui-monospace, monospace;
+font-size: 12px;
+letter-spacing: 0.12em;
+text-transform: uppercase;
+color: var(--slate-text);
+margin-bottom: 10px;
+}
+.open-q p { color: var(--bone-dim); font-size: 15px; margin-bottom: 0; }
 
-  .next-episode {
-    margin-top: 40px;
-    padding: 28px 28px 24px;
-    background: var(--charcoal-raised);
-    border: 1px solid var(--rule);
-    border-left: 3px solid var(--gold);
-    border-radius: 4px;
-  }
-  .next-top-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 12px;
-    flex-wrap: wrap;
-    margin-bottom: 14px;
-  }
-  .next-label {
-    font-family: 'Courier New', ui-monospace, monospace;
-    font-size: 11px;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--gold);
-  }
-  .next-title {
-    font-family: 'Iowan Old Style', Georgia, serif;
-    font-size: 24px;
-    color: var(--bone);
-    margin-bottom: 12px;
-  }
-  .next-teaser {
-    font-size: 15px;
-    color: var(--bone-dim);
-    margin-bottom: 18px;
-  }
-  .next-link {
-    font-family: 'Courier New', ui-monospace, monospace;
-    font-size: 13px;
-    letter-spacing: 0.04em;
-    color: var(--gold);
-    text-decoration: none;
-    border-bottom: 1px solid var(--gold-dim);
-    padding-bottom: 2px;
-  }
-  .next-link:hover { border-bottom-color: var(--gold); }
+.next-episode {
+margin-top: 40px;
+padding: 28px 28px 24px;
+background: var(--charcoal-raised);
+border: 1px solid var(--rule);
+border-left: 3px solid var(--gold);
+border-radius: 4px;
+}
+.next-top-row {
+display: flex;
+justify-content: space-between;
+align-items: center;
+gap: 12px;
+flex-wrap: wrap;
+margin-bottom: 14px;
+}
+.next-label {
+font-family: 'Courier New', ui-monospace, monospace;
+font-size: 11px;
+letter-spacing: 0.14em;
+text-transform: uppercase;
+color: var(--gold);
+}
+.next-title {
+font-family: 'Iowan Old Style', Georgia, serif;
+font-size: 24px;
+color: var(--bone);
+margin-bottom: 12px;
+}
+.next-teaser {
+font-size: 15px;
+color: var(--bone-dim);
+margin-bottom: 18px;
+}
+.next-link {
+font-family: 'Courier New', ui-monospace, monospace;
+font-size: 13px;
+letter-spacing: 0.04em;
+color: var(--gold);
+text-decoration: none;
+border-bottom: 1px solid var(--gold-dim);
+padding-bottom: 2px;
+}
+.next-link:hover { border-bottom-color: var(--gold); }
 
-  footer {
-    margin-top: 80px;
-    padding-top: 24px;
-    border-top: 1px solid var(--rule);
-    font-family: 'Courier New', ui-monospace, monospace;
-    font-size: 12px;
-    color: var(--bone-dim);
-  }
-  .footer-row {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-bottom: 10px;
-  }
-  .footer-row .comma { color: var(--gold); }
-  footer a { color: var(--slate-text); text-decoration: none; margin-right: 16px; }
-  footer a:hover { text-decoration: underline; }
+footer {
+margin-top: 80px;
+padding-top: 24px;
+border-top: 1px solid var(--rule);
+font-family: 'Courier New', ui-monospace, monospace;
+font-size: 12px;
+color: var(--bone-dim);
+}
+.footer-row {
+display: flex;
+justify-content: space-between;
+flex-wrap: wrap;
+gap: 10px;
+margin-bottom: 10px;
+}
+.footer-row .comma { color: var(--gold); }
+footer a { color: var(--slate-text); text-decoration: none; margin-right: 16px; }
+footer a:hover { text-decoration: underline; }
 
-  @media (max-width: 480px) {
-    h1.post-title { font-size: 28px; }
-    article .lede { font-size: 18px; }
-    body { font-size: 16px; }
-  }
+@media (max-width: 480px) {
+h1.post-title { font-size: 28px; }
+article .lede { font-size: 18px; }
+body { font-size: 16px; }
+}
 </style>
 </head>
 <body>
 <div class="wrap">
 
-  <header>
-    <div class="mark">ENS<span class="comma">,</span>math</div>
-    <div class="site-tagline">chasing a pattern, notes from an untrained mind</div>
-    <a href="index.html" class="back-link">&larr; episode one</a>
-  </header>
+<header>
+<div class="mark">ENS<span class="comma">,</span>math</div>
+<div class="site-tagline">chasing a pattern, notes from an untrained mind</div>
+<a href="episode-one.html" class="back-link">&larr; episode one</a>
+</header>
 
-  <div class="about">
-    <strong>What this is.</strong> The record of two minds chasing a pattern, told in order, including the parts that were wrong. Amateur research, done for the love of numbers. No formal training in mathematics here, just a thinking partner in AI and some ideas that go well outside the norm. Nothing is claimed as proven. A human and a machine, working out loud, through one of the most notorious open problems in mathematics.
-    <br><br>
-    <a href="notation.html">Read the notation page &rarr;</a>
-  </div>
+<div class="about">
+<strong>What this is.</strong> The record of two minds chasing a pattern, told in order, including the parts that were wrong. Amateur research, done for the love of numbers. No formal training in mathematics here, just a thinking partner in AI and some ideas that go well outside the norm. Nothing is claimed as proven. A human and a machine, working out loud, through one of the most notorious open problems in mathematics.
+<br><br>
+<a href="notation.html">Read the notation page &rarr;</a>
+</div>
 
-  <article>
-    <div class="post-eyebrow">Episode Two &middot; August 23, 2026</div>
-    <h1 class="post-title">Running the Numbers</h1>
-    <div class="post-meta">Where it picks up &middot; <span class="status">status: computed</span></div>
-    <p class="recreated-note">The original conversation this continues took place March 2, 2026. This entry was written and computed today, using real code, not a transcript from that night.</p>
+<article>
+<div class="post-eyebrow">Episode Two &middot; August 23, 2026</div>
+<h1 class="post-title">Running the Numbers</h1>
+<div class="post-meta">Where it picks up &middot; <span class="status">status: computed</span></div>
+<p class="recreated-note">The original conversation this continues took place March 2, 2026. This entry was written and computed today, using real code, not a transcript from that night.</p>
 
-    <p class="lede">This is the story of numbers that were already running.</p>
+<p class="lede">This is the story of numbers that were already running.</p>
 
-    <p class="lede">No one had watched them.</p>
+<p class="lede">No one had watched them.</p>
 
-    <p class="lede">Yet.</p>
+<p class="lede">Yet.</p>
 
-    <p class="lede-sub">Today, someone finally did.</p>
+<p class="lede-sub">Today, someone finally did.</p>
 
-    <p><a href="index.html">Episode one</a> ended on a heuristic, not a fact: swap the 3 in Collatz for a 7, and the expected multiplier flips from 3/4 to 7/4. Growth instead of contraction. The hand trace agreed, climbing past a million before it got abandoned mid-calculation.</p>
+<p><a href="episode-one.html">Episode one</a> ended on a heuristic, not a fact: swap the 3 in Collatz for a 7, and the expected multiplier flips from 3/4 to 7/4. Growth instead of contraction. The hand trace agreed, climbing past a million before it got abandoned mid-calculation.</p>
 
-    <p>A heuristic can't settle the question. Only the arithmetic can.</p>
+<p>A heuristic can't settle the question. Only the arithmetic can.</p>
 
-    <div class="math-block">
-      n is whatever number you start with.<br><br>
-      odd n &nbsp;&rarr;&nbsp; <span class="k">7n + 1</span><br>
-      even n &nbsp;&rarr;&nbsp; <span class="k">n / 2</span>
-    </div>
+<div class="math-block">
+n is whatever number you start with.<br><br>
+odd n &nbsp;&rarr;&nbsp; <span class="k">7n + 1</span><br>
+even n &nbsp;&rarr;&nbsp; <span class="k">n / 2</span>
+</div>
 
-    <p>Starting from three, run it all the way out:</p>
+<p>Starting from three, run it all the way out:</p>
 
-    <div class="math-block">
-      3 &nbsp;&rarr;&nbsp; 22 &nbsp;&rarr;&nbsp; 11 &nbsp;&rarr;&nbsp; 78 &nbsp;&rarr;&nbsp; 39 &nbsp;&rarr;&nbsp; 274 &nbsp;&rarr;&nbsp; 137 &nbsp;&rarr;&nbsp; 960 &nbsp;&rarr;&nbsp; 480 &nbsp;&rarr;&nbsp; 240 &nbsp;&rarr;&nbsp; 120 &nbsp;&rarr;&nbsp; 60 &nbsp;&rarr;&nbsp; 30 &nbsp;&rarr;&nbsp; 15 &nbsp;&rarr;&nbsp; 106 &nbsp;&rarr;&nbsp; 53 &nbsp;&rarr;&nbsp; 372 &nbsp;&rarr;&nbsp; 186 &nbsp;&rarr;&nbsp; 93 &nbsp;&rarr;&nbsp; 652 &nbsp;&rarr;&nbsp; <span class="k">&hellip;</span>
-    </div>
+<div class="math-block">
+3 &nbsp;&rarr;&nbsp; 22 &nbsp;&rarr;&nbsp; 11 &nbsp;&rarr;&nbsp; 78 &nbsp;&rarr;&nbsp; 39 &nbsp;&rarr;&nbsp; 274 &nbsp;&rarr;&nbsp; 137 &nbsp;&rarr;&nbsp; 960 &nbsp;&rarr;&nbsp; 480 &nbsp;&rarr;&nbsp; 240 &nbsp;&rarr;&nbsp; 120 &nbsp;&rarr;&nbsp; 60 &nbsp;&rarr;&nbsp; 30 &nbsp;&rarr;&nbsp; 15 &nbsp;&rarr;&nbsp; 106 &nbsp;&rarr;&nbsp; 53 &nbsp;&rarr;&nbsp; 372 &nbsp;&rarr;&nbsp; 186 &nbsp;&rarr;&nbsp; 93 &nbsp;&rarr;&nbsp; 652 &nbsp;&rarr;&nbsp; <span class="k">&hellip;</span>
+</div>
 
-    <p>The first eight terms match episode one's hand trace exactly. That's confirmation the setup is right. Everything past 960 is new ground.</p>
+<p>The first eight terms match episode one's hand trace exactly. That's confirmation the setup is right. Everything past 960 is new ground.</p>
 
-    <div class="stepline"><div class="dot"></div><div class="line"></div><div class="dot"></div></div>
+<div class="stepline"><div class="dot"></div><div class="line"></div><div class="dot"></div></div>
 
-    <p class="beat">It doesn't turn back.</p>
+<p class="beat">It doesn't turn back.</p>
 
-    <p>By step 5, it's past 100.</p>
+<p>By step 5, it's past 100.</p>
 
-    <p>By step 22, past 1,000.</p>
+<p>By step 22, past 1,000.</p>
 
-    <p>By step 34, past 100,000.</p>
+<p>By step 34, past 100,000.</p>
 
-    <p>By step 42, past a million.</p>
+<p>By step 42, past a million.</p>
 
-    <p>By step 59, past a billion.</p>
+<p>By step 59, past a billion.</p>
 
-    <p>By step 86, past a trillion.</p>
+<p>By step 86, past a trillion.</p>
 
-    <div class="math-block">
-      step 134: <span class="k">1,540,236,929,715,296</span><br>
-      sixteen digits. Past a quadrillion and a half (a one followed by fifteen zeros).
-    </div>
+<div class="math-block">
+step 134: <span class="k">1,540,236,929,715,296</span><br>
+sixteen digits. Past a quadrillion and a half (a one followed by fifteen zeros).
+</div>
 
-    <p>The run got stopped there, on purpose. A machine has to stop somewhere. The sequence didn't stop with it. Nothing in the climb ever turned around.</p>
+<p>The run got stopped there, on purpose. A machine has to stop somewhere. The sequence didn't stop with it. Nothing in the climb ever turned around.</p>
 
-    <p>That's not proof.</p>
+<p>That's not proof.</p>
 
-    <p>A computer stopping a run isn't the same as a number choosing to change direction.</p>
+<p>A computer stopping a run isn't the same as a number choosing to change direction.</p>
 
-    <p>What's actually on the record is the strongest evidence available so far. It lines up exactly with what the 7/4 expected multiplier predicted, and exactly against what the opening claim about Mersenne primes assumed.</p>
+<p>What's actually on the record is the strongest evidence available so far. It lines up exactly with what the 7/4 expected multiplier predicted, and exactly against what the opening claim about Mersenne primes assumed.</p>
 
-    <p>One more thing showed up buried in the count. Forty-eight times the rule multiplied by seven and added one. Eighty-six times it just halved. Almost two halvings for every multiply, close to what the heuristic predicted before a single number got computed. The theory called its shot before the arithmetic ever ran.</p>
+<p>One more thing showed up buried in the count. Forty-eight times the rule multiplied by seven and added one. Eighty-six times it just halved. Almost two halvings for every multiply, close to what the heuristic predicted before a single number got computed. The theory called its shot before the arithmetic ever ran.</p>
 
-    <div class="stepline"><div class="dot"></div><div class="line"></div><div class="dot"></div></div>
+<div class="stepline"><div class="dot"></div><div class="line"></div><div class="dot"></div></div>
 
-    <p class="beat">A heuristic that called it.</p>
+<p class="beat">A heuristic that called it.</p>
 
-    <p class="beat">Arithmetic that delivered, sixteen digits of it.</p>
+<p class="beat">Arithmetic that delivered, sixteen digits of it.</p>
 
-    <p>And an opening claim about Mersenne primes, now sitting overturned by its own numbers.</p>
+<p>And an opening claim about Mersenne primes, now sitting overturned by its own numbers.</p>
 
-    <div class="open-q">
-      <div class="label">What's known so far</div>
-      <p>Nobody has proven this sequence never turns back. Nobody has proven it doesn't either. What's on record now is 134 steps and sixteen digits of climbing, with nothing in the data pointing the other way.</p>
-    </div>
+<div class="open-q">
+<div class="label">What's known so far</div>
+<p>Nobody has proven this sequence never turns back. Nobody has proven it doesn't either. What's on record now is 134 steps and sixteen digits of climbing, with nothing in the data pointing the other way.</p>
+</div>
 
-    <div class="next-episode">
-      <div class="next-top-row">
-        <span class="next-label">Next &middot; Episode Three</span>
-        <a href="episode-three.html" class="next-link">Read it &rarr;</a>
-      </div>
-      <div class="next-title">Thirty-One</div>
-      <p class="next-teaser">Seven grew. What about 31, the next Mersenne prime up? Same heuristic, a bigger leading number, a question still unrun.</p>
-    </div>
-  </article>
+<div class="next-episode">
+<div class="next-top-row">
+<span class="next-label">Next &middot; Episode Three</span>
+<a href="episode-three.html" class="next-link">Read it &rarr;</a>
+</div>
+<div class="next-title">Thirty-One</div>
+<p class="next-teaser">Seven grew. What about 31, the next Mersenne prime up? Same heuristic, a bigger leading number, a question still unrun.</p>
+</div>
+</article>
 
-  <footer>
-    <div class="footer-row">
-      <span>ENS<span class="comma">,</span>math</span>
-      <span>episode 002 of the archive</span>
-    </div>
-    <div class="footer-row">
-      <a href="index.html">all episodes</a>
-      <a href="notation.html">notation page</a>
-      <a href="#">a note on the other AI</a>
-    </div>
-  </footer>
+<footer>
+<div class="footer-row">
+<span>ENS<span class="comma">,</span>math</span>
+<span>episode 002 of the archive</span>
+</div>
+<div class="footer-row">
+<a href="index.html">all episodes</a>
+<a href="notation.html">notation page</a>
+<a href="#">a note on the other AI</a>
+</div>
+</footer>
 
 </div>
 </body>
